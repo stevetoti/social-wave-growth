@@ -408,33 +408,40 @@ export default function LandingPage() {
               <ul className="space-y-2 text-sm">
                 <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
                 <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Integrations</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">API</a></li>
+                <li><a href="#platforms" className="hover:text-white transition-colors">Integrations</a></li>
+                <li><span className="text-gray-500 cursor-not-allowed">API (Coming Soon)</span></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold text-white mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+                <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
+                <li><span className="text-gray-500 cursor-not-allowed">Blog (Coming Soon)</span></li>
+                <li><span className="text-gray-500 cursor-not-allowed">Careers (Coming Soon)</span></li>
+                <li><a href="mailto:hello@socialwavegrowth.com" className="hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold text-white mb-4">Legal</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Cookie Policy</a></li>
+                <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
+                <li><Link href="/privacy#cookies" className="hover:text-white transition-colors">Cookie Policy</Link></li>
               </ul>
             </div>
           </div>
           <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm">© 2024 Social Wave Growth. All rights reserved.</p>
+            <p className="text-sm">© {new Date().getFullYear()} Social Wave Growth. All rights reserved.</p>
             <div className="flex gap-4">
               {platforms.map((platform) => (
-                <a key={platform} href="#" className="text-gray-500 hover:text-white transition-colors">
+                <a 
+                  key={platform} 
+                  href={platform === 'instagram' ? 'https://instagram.com' : platform === 'facebook' ? 'https://facebook.com' : platform === 'twitter' ? 'https://x.com' : platform === 'linkedin' ? 'https://linkedin.com' : 'https://tiktok.com'} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-white transition-colors"
+                  aria-label={`Follow us on ${platform}`}
+                >
                   <PlatformIcon platform={platform} size="sm" className="opacity-70 hover:opacity-100" />
                 </a>
               ))}

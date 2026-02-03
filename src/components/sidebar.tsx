@@ -14,6 +14,11 @@ import {
   LogOut,
   ChevronLeft,
   ChevronRight,
+  Upload,
+  Target,
+  Inbox,
+  FileText,
+  Shield,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
@@ -28,7 +33,11 @@ const menuItems = [
   { href: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
   { href: '/dashboard/calendar', icon: Calendar, label: 'Calendar' },
   { href: '/dashboard/compose', icon: PenSquare, label: 'Compose' },
+  { href: '/dashboard/bulk-upload', icon: Upload, label: 'Bulk Upload', pro: true },
+  { href: '/dashboard/inbox', icon: Inbox, label: 'Social Inbox', pro: true },
   { href: '/dashboard/analytics', icon: BarChart3, label: 'Analytics' },
+  { href: '/dashboard/competitors', icon: Target, label: 'Competitors', pro: true },
+  { href: '/dashboard/reports', icon: FileText, label: 'Reports', pro: true },
   { href: '/dashboard/ai-studio', icon: Sparkles, label: 'AI Studio' },
   { href: '/dashboard/settings', icon: Settings, label: 'Settings' },
 ];
@@ -62,7 +71,7 @@ export function Sidebar() {
           </div>
 
           {/* Navigation */}
-          <nav className="flex-1 p-4 space-y-2">
+          <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
             {menuItems.map((item) => {
               const isActive = pathname === item.href || 
                 (item.href !== '/dashboard' && pathname.startsWith(item.href));
@@ -71,7 +80,7 @@ export function Sidebar() {
                 <Link
                   href={item.href}
                   className={cn(
-                    'flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all',
+                    'flex items-center gap-3 px-3 py-2 rounded-lg transition-all',
                     isActive
                       ? 'bg-primary-50 text-primary-600'
                       : 'text-gray-600 hover:bg-gray-100',
@@ -80,7 +89,12 @@ export function Sidebar() {
                 >
                   <item.icon size={20} className={isActive ? 'text-primary-600' : ''} />
                   {!collapsed && (
-                    <span className="font-medium">{item.label}</span>
+                    <span className="font-medium flex-1">{item.label}</span>
+                  )}
+                  {!collapsed && item.pro && (
+                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium">
+                      PRO
+                    </span>
                   )}
                 </Link>
               );
@@ -89,13 +103,51 @@ export function Sidebar() {
                 return (
                   <Tooltip key={item.href}>
                     <TooltipTrigger asChild>{linkContent}</TooltipTrigger>
-                    <TooltipContent side="right">{item.label}</TooltipContent>
+                    <TooltipContent side="right">
+                      {item.label}
+                      {item.pro && ' (PRO)'}
+                    </TooltipContent>
                   </Tooltip>
                 );
               }
 
               return <div key={item.href}>{linkContent}</div>;
             })}
+
+            {/* Admin Link */}
+            <div className="pt-4 mt-4 border-t border-gray-200">
+              {collapsed ? (
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link
+                      href="/admin"
+                      className={cn(
+                        'flex items-center justify-center px-2 py-2 rounded-lg transition-all',
+                        pathname === '/admin'
+                          ? 'bg-red-50 text-red-600'
+                          : 'text-gray-600 hover:bg-gray-100'
+                      )}
+                    >
+                      <Shield size={20} />
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent side="right">Admin</TooltipContent>
+                </Tooltip>
+              ) : (
+                <Link
+                  href="/admin"
+                  className={cn(
+                    'flex items-center gap-3 px-3 py-2 rounded-lg transition-all',
+                    pathname === '/admin'
+                      ? 'bg-red-50 text-red-600'
+                      : 'text-gray-600 hover:bg-gray-100'
+                  )}
+                >
+                  <Shield size={20} />
+                  <span className="font-medium">Admin</span>
+                </Link>
+              )}
+            </div>
           </nav>
 
           {/* Footer */}

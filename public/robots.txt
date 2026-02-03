@@ -1,0 +1,11 @@
+# Social Wave Growth - Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://socialwavegrowth.com/sitemap.xml
+
+# Disallow private areas
+Disallow: /dashboard/
+Disallow: /admin/
+Disallow: /api/
