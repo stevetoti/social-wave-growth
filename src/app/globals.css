@@ -3,25 +3,118 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 262.1 83.3% 57.8%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 24.6 95% 53.1%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 262.1 83.3% 57.8%;
+  --radius: 0.5rem;
+  --chart-1: 262.1 83.3% 57.8%;
+  --chart-2: 24.6 95% 53.1%;
+  --chart-3: 173 58% 39%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 262.1 83.3% 57.8%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 24.6 95% 53.1%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 262.1 83.3% 57.8%;
+  --chart-1: 262.1 83.3% 57.8%;
+  --chart-2: 24.6 95% 53.1%;
+  --chart-3: 173 58% 39%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 50%, #4C1D95 100%);
+}
+
+/* Platform colors */
+.platform-instagram {
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+}
+
+.platform-facebook {
+  background: #1877F2;
+}
+
+.platform-twitter {
+  background: #000000;
+}
+
+.platform-linkedin {
+  background: #0A66C2;
+}
+
+.platform-tiktok {
+  background: linear-gradient(135deg, #00f2ea 0%, #ff0050 100%);
 }
