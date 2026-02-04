@@ -270,7 +270,7 @@ export default function CompetitorsPage() {
                     type="monotone"
                     dataKey="you"
                     name="Your Account"
-                    stroke="#8B5CF6"
+                    stroke="#233C6F"
                     strokeWidth={3}
                     dot={false}
                   />

@@ -135,7 +135,7 @@ export default function AnalyticsPage() {
           value="856K"
           change={8.7}
           icon={Share2}
-          iconColor="text-purple-600"
+          iconColor="text-blue-900"
         />
       </div>
 
@@ -152,8 +152,8 @@ export default function AnalyticsPage() {
                 <AreaChart data={chartData}>
                   <defs>
                     <linearGradient id="colorFollowers" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#8B5CF6" stopOpacity={0.3} />
-                      <stop offset="95%" stopColor="#8B5CF6" stopOpacity={0} />
+                      <stop offset="5%" stopColor="#233C6F" stopOpacity={0.3} />
+                      <stop offset="95%" stopColor="#233C6F" stopOpacity={0} />
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
@@ -169,7 +169,7 @@ export default function AnalyticsPage() {
                   <Area
                     type="monotone"
                     dataKey="followers"
-                    stroke="#8B5CF6"
+                    stroke="#233C6F"
                     strokeWidth={2}
                     fill="url(#colorFollowers)"
                   />
@@ -235,7 +235,7 @@ export default function AnalyticsPage() {
                     }}
                     formatter={(value) => [`${(value as number).toFixed(1)}K`, '']}
                   />
-                  <Bar dataKey="impressions" fill="#8B5CF6" name="Impressions" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="impressions" fill="#233C6F" name="Impressions" radius={[4, 4, 0, 0]} />
                   <Bar dataKey="reach" fill="#F97316" name="Reach" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>

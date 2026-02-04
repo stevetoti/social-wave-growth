@@ -80,7 +80,7 @@ export default function DashboardPage() {
           value="125.4K"
           change={8.3}
           icon={Eye}
-          iconColor="text-purple-600"
+          iconColor="text-blue-900"
         />
       </div>
 
@@ -102,8 +102,8 @@ export default function DashboardPage() {
                 <AreaChart data={chartData}>
                   <defs>
                     <linearGradient id="followerGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#8B5CF6" stopOpacity={0.3} />
-                      <stop offset="95%" stopColor="#8B5CF6" stopOpacity={0} />
+                      <stop offset="5%" stopColor="#233C6F" stopOpacity={0.3} />
+                      <stop offset="95%" stopColor="#233C6F" stopOpacity={0} />
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
@@ -119,7 +119,7 @@ export default function DashboardPage() {
                   <Area
                     type="monotone"
                     dataKey="followers"
-                    stroke="#8B5CF6"
+                    stroke="#233C6F"
                     strokeWidth={2}
                     fill="url(#followerGradient)"
                   />

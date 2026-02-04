@@ -354,7 +354,7 @@ export default function ReportsPage() {
                             report.frequency === 'daily'
                               ? 'bg-blue-100 text-blue-700'
                               : report.frequency === 'weekly'
-                              ? 'bg-purple-100 text-purple-700'
+                              ? 'bg-blue-100 text-blue-950'
                               : 'bg-orange-100 text-orange-700'
                           }
                         >

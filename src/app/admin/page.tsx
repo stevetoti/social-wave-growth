@@ -199,7 +199,7 @@ const revenueData = Array.from({ length: 12 }, (_, i) => ({
 
 const planDistribution = [
   { name: 'Starter', value: 45, color: '#94A3B8' },
-  { name: 'Pro', value: 35, color: '#8B5CF6' },
+  { name: 'Pro', value: 35, color: '#233C6F' },
   { name: 'Business', value: 15, color: '#F97316' },
   { name: 'Free', value: 5, color: '#E5E7EB' },
 ];
@@ -242,7 +242,7 @@ export default function AdminDashboard() {
   const getPlanBadgeColor = (plan: User['plan']) => {
     switch (plan) {
       case 'starter': return 'bg-gray-100 text-gray-700';
-      case 'pro': return 'bg-purple-100 text-purple-700';
+      case 'pro': return 'bg-blue-100 text-blue-950';
       case 'business': return 'bg-orange-100 text-orange-700';
       default: return 'bg-gray-100 text-gray-500';
     }
@@ -334,8 +334,8 @@ export default function AdminDashboard() {
                     +23% from last month
                   </p>
                 </div>
-                <div className="p-3 bg-purple-100 rounded-lg">
-                  <Activity className="w-6 h-6 text-purple-600" />
+                <div className="p-3 bg-blue-100 rounded-lg">
+                  <Activity className="w-6 h-6 text-blue-900" />
                 </div>
               </div>
             </CardContent>
@@ -528,9 +528,9 @@ export default function AdminDashboard() {
                         <Line
                           type="monotone"
                           dataKey="mrr"
-                          stroke="#8B5CF6"
+                          stroke="#233C6F"
                           strokeWidth={3}
-                          dot={{ fill: '#8B5CF6' }}
+                          dot={{ fill: '#233C6F' }}
                         />
                       </LineChart>
                     </ResponsiveContainer>

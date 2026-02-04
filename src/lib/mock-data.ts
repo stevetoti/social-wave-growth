@@ -245,7 +245,7 @@ export const pricingPlans: PricingPlan[] = [
 ];
 
 export const platformColors: Record<Platform, string> = {
-  instagram: 'bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400',
+  instagram: 'bg-gradient-to-br from-blue-500 via-pink-500 to-orange-400',
   facebook: 'bg-blue-600',
   twitter: 'bg-black',
   linkedin: 'bg-blue-700',

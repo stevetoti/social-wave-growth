@@ -311,8 +311,8 @@ export default function PricingPage() {
               <p className="text-sm text-gray-500">No credit card needed</p>
             </div>
             <div className="flex flex-col items-center gap-2">
-              <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                <Users className="w-6 h-6 text-purple-600" />
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                <Users className="w-6 h-6 text-blue-900" />
               </div>
               <p className="font-medium text-gray-900">10,000+ Users</p>
               <p className="text-sm text-gray-500">Trust our platform</p>
