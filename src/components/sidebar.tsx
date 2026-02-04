@@ -19,9 +19,11 @@ import {
   Inbox,
   FileText,
   Shield,
+  Menu,
+  X,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Tooltip,
   TooltipContent,
@@ -45,21 +47,60 @@ const menuItems = [
 export function Sidebar() {
   const pathname = usePathname();
   const [collapsed, setCollapsed] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
+  // Close mobile menu on escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileOpen(false);
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, []);
 
   return (
     <TooltipProvider delayDuration={0}>
+      {/* Mobile Menu Button */}
+      <Button
+        variant="ghost"
+        size="icon"
+        onClick={() => setMobileOpen(true)}
+        className="fixed top-4 left-4 z-50 lg:hidden bg-white shadow-md"
+      >
+        <Menu size={20} />
+      </Button>
+
+      {/* Mobile Overlay */}
+      {mobileOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setMobileOpen(false)}
+        />
+      )}
+
+      {/* Sidebar */}
       <aside
         className={cn(
-          'fixed left-0 top-0 z-40 h-screen bg-white border-r border-gray-200 transition-all duration-300',
-          collapsed ? 'w-16' : 'w-64'
+          'fixed left-0 top-0 z-50 h-screen bg-white border-r border-gray-200 transition-all duration-300',
+          // Desktop: show normally
+          'hidden lg:block',
+          collapsed ? 'lg:w-16' : 'lg:w-64',
+          // Mobile: slide in/out
+          mobileOpen && 'block w-72'
         )}
       >
         <div className="flex flex-col h-full">
           {/* Logo */}
           <div className="flex items-center justify-between p-4 border-b border-gray-200">
-            <Link href="/dashboard">
-              <Logo showText={!collapsed} size={collapsed ? 'sm' : 'md'} />
+            <Link href="/dashboard" onClick={() => setMobileOpen(false)}>
+              <Logo showText={!collapsed || mobileOpen} size={collapsed && !mobileOpen ? 'sm' : 'md'} />
             </Link>
+            {/* Desktop collapse button */}
             <Button
               variant="ghost"
               size="icon"
@@ -67,6 +108,15 @@ export function Sidebar() {
               className={cn('hidden lg:flex', collapsed && 'mx-auto')}
             >
               {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
+            </Button>
+            {/* Mobile close button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setMobileOpen(false)}
+              className="lg:hidden"
+            >
+              <X size={18} />
             </Button>
           </div>
 
@@ -76,30 +126,33 @@ export function Sidebar() {
               const isActive = pathname === item.href || 
                 (item.href !== '/dashboard' && pathname.startsWith(item.href));
               
+              const showText = !collapsed || mobileOpen;
+              
               const linkContent = (
                 <Link
                   href={item.href}
+                  onClick={() => setMobileOpen(false)}
                   className={cn(
-                    'flex items-center gap-3 px-3 py-2 rounded-lg transition-all',
+                    'flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all',
                     isActive
-                      ? 'bg-primary-50 text-primary-600'
+                      ? 'bg-primary text-white'
                       : 'text-gray-600 hover:bg-gray-100',
-                    collapsed && 'justify-center px-2'
+                    !showText && 'justify-center px-2'
                   )}
                 >
-                  <item.icon size={20} className={isActive ? 'text-primary-600' : ''} />
-                  {!collapsed && (
+                  <item.icon size={20} />
+                  {showText && (
                     <span className="font-medium flex-1">{item.label}</span>
                   )}
-                  {!collapsed && item.pro && (
-                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium">
+                  {showText && item.pro && (
+                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-secondary text-white font-medium">
                       PRO
                     </span>
                   )}
                 </Link>
               );
 
-              if (collapsed) {
+              if (!showText) {
                 return (
                   <Tooltip key={item.href}>
                     <TooltipTrigger asChild>{linkContent}</TooltipTrigger>
@@ -116,15 +169,29 @@ export function Sidebar() {
 
             {/* Admin Link */}
             <div className="pt-4 mt-4 border-t border-gray-200">
-              {collapsed ? (
+              {!collapsed || mobileOpen ? (
+                <Link
+                  href="/admin"
+                  onClick={() => setMobileOpen(false)}
+                  className={cn(
+                    'flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all',
+                    pathname === '/admin'
+                      ? 'bg-primary text-white'
+                      : 'text-gray-600 hover:bg-gray-100'
+                  )}
+                >
+                  <Shield size={20} />
+                  <span className="font-medium">Admin</span>
+                </Link>
+              ) : (
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Link
                       href="/admin"
                       className={cn(
-                        'flex items-center justify-center px-2 py-2 rounded-lg transition-all',
+                        'flex items-center justify-center px-2 py-2.5 rounded-lg transition-all',
                         pathname === '/admin'
-                          ? 'bg-red-50 text-red-600'
+                          ? 'bg-primary text-white'
                           : 'text-gray-600 hover:bg-gray-100'
                       )}
                     >
@@ -133,45 +200,33 @@ export function Sidebar() {
                   </TooltipTrigger>
                   <TooltipContent side="right">Admin</TooltipContent>
                 </Tooltip>
-              ) : (
-                <Link
-                  href="/admin"
-                  className={cn(
-                    'flex items-center gap-3 px-3 py-2 rounded-lg transition-all',
-                    pathname === '/admin'
-                      ? 'bg-red-50 text-red-600'
-                      : 'text-gray-600 hover:bg-gray-100'
-                  )}
-                >
-                  <Shield size={20} />
-                  <span className="font-medium">Admin</span>
-                </Link>
               )}
             </div>
           </nav>
 
-          {/* Footer */}
+          {/* Logout */}
           <div className="p-4 border-t border-gray-200">
-            {collapsed ? (
+            {!collapsed || mobileOpen ? (
+              <Link
+                href="/"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-3 px-3 py-2.5 text-gray-600 hover:bg-gray-100 rounded-lg transition-all"
+              >
+                <LogOut size={20} />
+                <span className="font-medium">Log Out</span>
+              </Link>
+            ) : (
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
-                    href="/login"
-                    className="flex items-center justify-center p-2 text-gray-600 hover:text-red-600 rounded-lg hover:bg-gray-100 transition-colors"
+                    href="/"
+                    className="flex items-center justify-center px-2 py-2.5 text-gray-600 hover:bg-gray-100 rounded-lg transition-all"
                   >
                     <LogOut size={20} />
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent side="right">Log Out</TooltipContent>
               </Tooltip>
-            ) : (
-              <Link
-                href="/login"
-                className="flex items-center gap-3 px-3 py-2.5 text-gray-600 hover:text-red-600 rounded-lg hover:bg-gray-100 transition-colors"
-              >
-                <LogOut size={20} />
-                <span className="font-medium">Log Out</span>
-              </Link>
             )}
           </div>
         </div>

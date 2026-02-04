@@ -24,12 +24,16 @@ export default function DashboardLayout({
     <div className="min-h-screen bg-gray-50">
       <Sidebar />
       
-      {/* Main content */}
-      <div className="lg:pl-64 pl-16">
+      {/* Main content - no left padding on mobile */}
+      <div className="lg:pl-64">
         {/* Top bar */}
         <header className="sticky top-0 z-30 bg-white border-b border-gray-200">
           <div className="flex items-center justify-between px-4 lg:px-8 h-16">
+            {/* Left side - space for hamburger on mobile */}
             <div className="flex items-center gap-4 flex-1">
+              {/* Spacer for mobile hamburger menu */}
+              <div className="w-10 lg:hidden" />
+              
               <div className="relative max-w-md w-full hidden md:block">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
                 <Input
@@ -39,13 +43,13 @@ export default function DashboardLayout({
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <Link href="/dashboard/compose">
-                <Button className="bg-secondary-500 hover:bg-secondary-600 text-white hidden sm:flex">
+                <Button className="bg-secondary hover:bg-secondary/90 text-white hidden sm:flex">
                   <Plus className="w-4 h-4 mr-2" />
                   New Post
                 </Button>
-                <Button className="bg-secondary-500 hover:bg-secondary-600 text-white sm:hidden" size="icon">
+                <Button className="bg-secondary hover:bg-secondary/90 text-white sm:hidden" size="icon">
                   <Plus className="w-4 h-4" />
                 </Button>
               </Link>
@@ -57,10 +61,10 @@ export default function DashboardLayout({
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-10 w-10 rounded-full">
-                    <Avatar className="h-10 w-10">
+                  <Button variant="ghost" className="relative h-9 w-9 sm:h-10 sm:w-10 rounded-full">
+                    <Avatar className="h-9 w-9 sm:h-10 sm:w-10">
                       <AvatarImage src="" alt="User" />
-                      <AvatarFallback className="bg-primary-100 text-primary-600">SW</AvatarFallback>
+                      <AvatarFallback className="bg-primary text-white text-sm">SW</AvatarFallback>
                     </Avatar>
                   </Button>
                 </DropdownMenuTrigger>
@@ -82,7 +86,7 @@ export default function DashboardLayout({
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
-                    <Link href="/login" className="text-red-600">Log out</Link>
+                    <Link href="/" className="text-red-600">Log out</Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
