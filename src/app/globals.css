@@ -4,55 +4,55 @@
 
 :root {
   --background: 0 0% 100%;
-  --foreground: 240 10% 3.9%;
+  --foreground: 220 53% 15%;
   --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
+  --card-foreground: 220 53% 15%;
   --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 3.9%;
-  --primary: 262.1 83.3% 57.8%;
+  --popover-foreground: 220 53% 15%;
+  --primary: 220 53% 29%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 24.6 95% 53.1%;
+  --secondary: 14 86% 57%;
   --secondary-foreground: 0 0% 100%;
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
-  --accent: 240 4.8% 95.9%;
-  --accent-foreground: 240 5.9% 10%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 240 5.9% 90%;
-  --input: 240 5.9% 90%;
-  --ring: 262.1 83.3% 57.8%;
+  --muted: 220 20% 96%;
+  --muted-foreground: 220 20% 46%;
+  --accent: 14 86% 95%;
+  --accent-foreground: 14 86% 35%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 220 20% 90%;
+  --input: 220 20% 90%;
+  --ring: 220 53% 29%;
   --radius: 0.5rem;
-  --chart-1: 262.1 83.3% 57.8%;
-  --chart-2: 24.6 95% 53.1%;
-  --chart-3: 173 58% 39%;
+  --chart-1: 220 53% 29%;
+  --chart-2: 14 86% 57%;
+  --chart-3: 160 84% 39%;
   --chart-4: 43 74% 66%;
   --chart-5: 27 87% 67%;
 }
 
 .dark {
-  --background: 240 10% 3.9%;
+  --background: 220 53% 8%;
   --foreground: 0 0% 98%;
-  --card: 240 10% 3.9%;
+  --card: 220 53% 12%;
   --card-foreground: 0 0% 98%;
-  --popover: 240 10% 3.9%;
+  --popover: 220 53% 12%;
   --popover-foreground: 0 0% 98%;
-  --primary: 262.1 83.3% 57.8%;
+  --primary: 14 86% 57%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 24.6 95% 53.1%;
+  --secondary: 220 53% 40%;
   --secondary-foreground: 0 0% 100%;
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
-  --accent: 240 3.7% 15.9%;
+  --muted: 220 30% 18%;
+  --muted-foreground: 220 20% 65%;
+  --accent: 220 30% 18%;
   --accent-foreground: 0 0% 98%;
-  --destructive: 0 62.8% 30.6%;
+  --destructive: 0 62% 30%;
   --destructive-foreground: 0 0% 98%;
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
-  --ring: 262.1 83.3% 57.8%;
-  --chart-1: 262.1 83.3% 57.8%;
-  --chart-2: 24.6 95% 53.1%;
-  --chart-3: 173 58% 39%;
+  --border: 220 30% 20%;
+  --input: 220 30% 20%;
+  --ring: 14 86% 57%;
+  --chart-1: 14 86% 57%;
+  --chart-2: 220 53% 45%;
+  --chart-3: 160 84% 39%;
   --chart-4: 43 74% 66%;
   --chart-5: 27 87% 67%;
 }
@@ -85,17 +85,17 @@
   background: hsl(var(--muted-foreground) / 0.5);
 }
 
-/* Gradient backgrounds */
+/* Brand gradients - Pacific Wave Digital */
 .gradient-primary {
-  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+  background: linear-gradient(135deg, #233C6F 0%, #1a2d52 100%);
 }
 
 .gradient-secondary {
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  background: linear-gradient(135deg, #EF5E33 0%, #d94e28 100%);
 }
 
 .gradient-hero {
-  background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 50%, #4C1D95 100%);
+  background: linear-gradient(135deg, #233C6F 0%, #EF5E33 100%);
 }
 
 /* Platform colors */
