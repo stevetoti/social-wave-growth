@@ -121,7 +121,7 @@ export default function AnalyticsPage() {
           value="4.8%"
           change={2.1}
           icon={TrendingUp}
-          iconColor="text-green-600"
+          iconColor="text-secondary-600"
         />
         <StatsCard
           title="Total Impressions"
@@ -334,7 +334,7 @@ export default function AnalyticsPage() {
                       <Share2 className="w-4 h-4" />
                       {post.shares}
                     </div>
-                    <div className="flex items-center gap-1 text-green-600">
+                    <div className="flex items-center gap-1 text-secondary-600">
                       <TrendingUp className="w-4 h-4" />
                       {post.engagement}%
                     </div>

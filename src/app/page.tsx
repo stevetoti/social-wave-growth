@@ -171,10 +171,10 @@ export default function LandingPage() {
               </Link>
             </div>
             <p className="text-sm text-gray-500 flex items-center justify-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-green-500" />
+              <CheckCircle2 className="w-4 h-4 text-secondary-500" />
               No credit card required
               <span className="mx-2">•</span>
-              <CheckCircle2 className="w-4 h-4 text-green-500" />
+              <CheckCircle2 className="w-4 h-4 text-secondary-500" />
               Cancel anytime
             </p>
           </div>
@@ -187,7 +187,7 @@ export default function LandingPage() {
                 <div className="flex gap-1.5">
                   <div className="w-3 h-3 rounded-full bg-red-400" />
                   <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                  <div className="w-3 h-3 rounded-full bg-green-400" />
+                  <div className="w-3 h-3 rounded-full bg-secondary-400" />
                 </div>
                 <div className="flex-1 text-center text-sm text-gray-500">app.socialwavegrowth.com</div>
               </div>
@@ -197,14 +197,14 @@ export default function LandingPage() {
                     <CardContent className="p-4">
                       <div className="text-sm text-gray-500 mb-1">Total Followers</div>
                       <div className="text-2xl font-bold text-gray-900">45,204</div>
-                      <div className="text-sm text-green-600">+12.5% this month</div>
+                      <div className="text-sm text-secondary-600">+12.5% this month</div>
                     </CardContent>
                   </Card>
                   <Card className="bg-white shadow-sm">
                     <CardContent className="p-4">
                       <div className="text-sm text-gray-500 mb-1">Engagement Rate</div>
                       <div className="text-2xl font-bold text-gray-900">4.8%</div>
-                      <div className="text-sm text-green-600">+2.1% this month</div>
+                      <div className="text-sm text-secondary-600">+2.1% this month</div>
                     </CardContent>
                   </Card>
                   <Card className="bg-white shadow-sm">
@@ -349,7 +349,7 @@ export default function LandingPage() {
                   <ul className="space-y-3 mb-6">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-5 h-5 text-secondary-500 shrink-0 mt-0.5" />
                         <span className="text-gray-600">{feature}</span>
                       </li>
                     ))}

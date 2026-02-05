@@ -203,7 +203,7 @@ export default function PricingPage() {
               Yearly
             </span>
             {isYearly && (
-              <Badge className="bg-green-100 text-green-700">Save 20%</Badge>
+              <Badge className="bg-secondary-100 text-secondary-700">Save 20%</Badge>
             )}
           </div>
         </div>
@@ -247,7 +247,7 @@ export default function PricingPage() {
                       /{isYearly ? 'year' : 'month'}
                     </span>
                     {isYearly && (
-                      <p className="text-sm text-green-600 mt-1">
+                      <p className="text-sm text-secondary-600 mt-1">
                         ${Math.round(tier.yearlyPrice / 12)}/month billed annually
                       </p>
                     )}
@@ -275,7 +275,7 @@ export default function PricingPage() {
                     {tier.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
                         {feature.included ? (
-                          <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-5 h-5 text-secondary-500 shrink-0 mt-0.5" />
                         ) : (
                           <X className="w-5 h-5 text-gray-300 shrink-0 mt-0.5" />
                         )}
@@ -297,8 +297,8 @@ export default function PricingPage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="flex flex-col items-center gap-2">
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                <Shield className="w-6 h-6 text-green-600" />
+              <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                <Shield className="w-6 h-6 text-primary-600" />
               </div>
               <p className="font-medium text-gray-900">Secure Payments</p>
               <p className="text-sm text-gray-500">256-bit SSL encryption</p>
@@ -370,8 +370,8 @@ export default function PricingPage() {
                 <tr className="border-b">
                   <td className="py-3 px-4 text-gray-700">AI Content Suggestions</td>
                   <td className="py-3 px-4 text-center"><X className="w-4 h-4 mx-auto text-gray-300" /></td>
-                  <td className="py-3 px-4 text-center"><CheckCircle2 className="w-4 h-4 mx-auto text-green-500" /></td>
-                  <td className="py-3 px-4 text-center"><CheckCircle2 className="w-4 h-4 mx-auto text-green-500" /></td>
+                  <td className="py-3 px-4 text-center"><CheckCircle2 className="w-4 h-4 mx-auto text-secondary-500" /></td>
+                  <td className="py-3 px-4 text-center"><CheckCircle2 className="w-4 h-4 mx-auto text-secondary-500" /></td>
                 </tr>
                 <tr className="border-b">
                   <td className="py-3 px-4 text-gray-700">Competitor Tracking</td>
@@ -382,14 +382,14 @@ export default function PricingPage() {
                 <tr className="border-b">
                   <td className="py-3 px-4 text-gray-700">Social Inbox</td>
                   <td className="py-3 px-4 text-center"><X className="w-4 h-4 mx-auto text-gray-300" /></td>
-                  <td className="py-3 px-4 text-center"><CheckCircle2 className="w-4 h-4 mx-auto text-green-500" /></td>
-                  <td className="py-3 px-4 text-center"><CheckCircle2 className="w-4 h-4 mx-auto text-green-500" /></td>
+                  <td className="py-3 px-4 text-center"><CheckCircle2 className="w-4 h-4 mx-auto text-secondary-500" /></td>
+                  <td className="py-3 px-4 text-center"><CheckCircle2 className="w-4 h-4 mx-auto text-secondary-500" /></td>
                 </tr>
                 <tr className="border-b">
                   <td className="py-3 px-4 text-gray-700">API Access</td>
                   <td className="py-3 px-4 text-center"><X className="w-4 h-4 mx-auto text-gray-300" /></td>
                   <td className="py-3 px-4 text-center"><X className="w-4 h-4 mx-auto text-gray-300" /></td>
-                  <td className="py-3 px-4 text-center"><CheckCircle2 className="w-4 h-4 mx-auto text-green-500" /></td>
+                  <td className="py-3 px-4 text-center"><CheckCircle2 className="w-4 h-4 mx-auto text-secondary-500" /></td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 text-gray-700">Support</td>

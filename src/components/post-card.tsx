@@ -25,8 +25,8 @@ interface PostCardProps {
 
 const statusStyles = {
   draft: 'bg-gray-100 text-gray-700',
-  scheduled: 'bg-blue-100 text-blue-700',
-  published: 'bg-green-100 text-green-700',
+  scheduled: 'bg-primary-100 text-primary-700',
+  published: 'bg-secondary-100 text-secondary-700',
   failed: 'bg-red-100 text-red-700',
 };
 

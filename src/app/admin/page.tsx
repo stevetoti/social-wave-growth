@@ -250,7 +250,7 @@ export default function AdminDashboard() {
 
   const getStatusBadgeColor = (status: User['status']) => {
     switch (status) {
-      case 'active': return 'bg-green-100 text-green-700';
+      case 'active': return 'bg-secondary-100 text-secondary-700';
       case 'suspended': return 'bg-red-100 text-red-700';
       case 'pending': return 'bg-yellow-100 text-yellow-700';
       default: return 'bg-gray-100 text-gray-700';
@@ -295,13 +295,13 @@ export default function AdminDashboard() {
                 <div>
                   <p className="text-sm text-gray-500">Monthly Revenue</p>
                   <p className="text-2xl font-bold text-gray-900">${totalMRR.toLocaleString()}</p>
-                  <p className="text-sm text-green-600 flex items-center gap-1">
+                  <p className="text-sm text-secondary-600 flex items-center gap-1">
                     <TrendingUp className="w-3 h-3" />
                     +12.5% from last month
                   </p>
                 </div>
-                <div className="p-3 bg-green-100 rounded-lg">
-                  <DollarSign className="w-6 h-6 text-green-600" />
+                <div className="p-3 bg-secondary-100 rounded-lg">
+                  <DollarSign className="w-6 h-6 text-secondary-600" />
                 </div>
               </div>
             </CardContent>
@@ -312,7 +312,7 @@ export default function AdminDashboard() {
                 <div>
                   <p className="text-sm text-gray-500">Active Users</p>
                   <p className="text-2xl font-bold text-gray-900">{activeUsers}</p>
-                  <p className="text-sm text-green-600 flex items-center gap-1">
+                  <p className="text-sm text-secondary-600 flex items-center gap-1">
                     <TrendingUp className="w-3 h-3" />
                     +8% from last month
                   </p>
@@ -329,7 +329,7 @@ export default function AdminDashboard() {
                 <div>
                   <p className="text-sm text-gray-500">Posts This Month</p>
                   <p className="text-2xl font-bold text-gray-900">{totalPosts.toLocaleString()}</p>
-                  <p className="text-sm text-green-600 flex items-center gap-1">
+                  <p className="text-sm text-secondary-600 flex items-center gap-1">
                     <TrendingUp className="w-3 h-3" />
                     +23% from last month
                   </p>
@@ -484,7 +484,7 @@ export default function AdminDashboard() {
                                 ) : (
                                   <DropdownMenuItem
                                     onClick={() => reactivateUser(user.id)}
-                                    className="text-green-600"
+                                    className="text-secondary-600"
                                   >
                                     <CheckCircle2 className="w-4 h-4 mr-2" />
                                     Reactivate
@@ -653,7 +653,7 @@ export default function AdminDashboard() {
                         <Badge
                           className={
                             platform.status === 'operational'
-                              ? 'bg-green-100 text-green-700'
+                              ? 'bg-secondary-100 text-secondary-700'
                               : platform.status === 'degraded'
                               ? 'bg-yellow-100 text-yellow-700'
                               : 'bg-red-100 text-red-700'

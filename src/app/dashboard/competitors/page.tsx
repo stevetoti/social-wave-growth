@@ -364,7 +364,7 @@ export default function CompetitorsPage() {
                           <Badge
                             className={
                               competitor.followersChange >= 0
-                                ? 'bg-green-100 text-green-700'
+                                ? 'bg-secondary-100 text-secondary-700'
                                 : 'bg-red-100 text-red-700'
                             }
                           >
@@ -387,7 +387,7 @@ export default function CompetitorsPage() {
                           <Badge
                             className={
                               competitor.engagementChange >= 0
-                                ? 'bg-green-100 text-green-700'
+                                ? 'bg-secondary-100 text-secondary-700'
                                 : 'bg-red-100 text-red-700'
                             }
                           >

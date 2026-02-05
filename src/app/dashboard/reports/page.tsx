@@ -301,11 +301,11 @@ export default function ReportsPage() {
             </div>
           </CardContent>
         </Card>
-        <Card className="bg-gradient-to-br from-green-50 to-white">
+        <Card className="bg-gradient-to-br from-secondary-50 to-white">
           <CardContent className="p-6">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-green-100 rounded-lg">
-                <FileText className="w-6 h-6 text-green-600" />
+              <div className="p-3 bg-secondary-100 rounded-lg">
+                <FileText className="w-6 h-6 text-secondary-600" />
               </div>
               <div>
                 <p className="text-2xl font-bold text-gray-900">{generatedReports.length}</p>
@@ -361,7 +361,7 @@ export default function ReportsPage() {
                           {report.frequency.charAt(0).toUpperCase() + report.frequency.slice(1)}
                         </Badge>
                         {report.isActive && (
-                          <Badge className="bg-green-100 text-green-700">
+                          <Badge className="bg-secondary-100 text-secondary-700">
                             <CheckCircle2 className="w-3 h-3 mr-1" />
                             Active
                           </Badge>

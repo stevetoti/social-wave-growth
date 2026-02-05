@@ -394,7 +394,7 @@ export default function AIStudioPage() {
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Badge className="bg-green-100 text-green-700">
+                      <Badge className="bg-secondary-100 text-secondary-700">
                         <TrendingUp className="w-3 h-3 mr-1" />
                         {topic.trending}
                       </Badge>

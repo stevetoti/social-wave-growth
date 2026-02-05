@@ -299,7 +299,7 @@ export default function BulkUploadPage() {
                     </span>
                   </div>
                   <div className="flex items-center gap-3 text-sm">
-                    <span className="flex items-center gap-1 text-green-600">
+                    <span className="flex items-center gap-1 text-secondary-600">
                       <CheckCircle2 className="w-4 h-4" />
                       {validCount} valid
                     </span>
@@ -379,7 +379,7 @@ export default function BulkUploadPage() {
                           {post.scheduledTime}
                         </div>
                         {post.status === 'valid' && (
-                          <Badge className="bg-green-100 text-green-700">
+                          <Badge className="bg-secondary-100 text-secondary-700">
                             <CheckCircle2 className="w-3 h-3 mr-1" />
                             Valid
                           </Badge>

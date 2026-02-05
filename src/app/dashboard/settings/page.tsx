@@ -198,7 +198,7 @@ export default function SettingsPage() {
                   <div className="flex items-center gap-3">
                     {account.is_connected ? (
                       <>
-                        <Badge className="bg-green-100 text-green-700">
+                        <Badge className="bg-secondary-100 text-secondary-700">
                           <Check className="w-3 h-3 mr-1" />
                           Connected
                         </Badge>

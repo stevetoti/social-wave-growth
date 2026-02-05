@@ -83,9 +83,9 @@ function DraggablePost({ post, onClick }: DraggablePostProps) {
       <div
         className={`p-2 rounded-lg text-xs border-l-4 cursor-grab active:cursor-grabbing group ${
           post.status === 'scheduled'
-            ? 'bg-blue-50 border-blue-500'
+            ? 'bg-primary-50 border-primary-500'
             : post.status === 'published'
-            ? 'bg-green-50 border-green-500'
+            ? 'bg-secondary-50 border-secondary-500'
             : 'bg-gray-50 border-gray-400'
         }`}
       >
@@ -403,8 +403,8 @@ export default function CalendarPage() {
                                   variant="secondary"
                                   className={`w-full justify-start text-xs truncate ${
                                     post.status === 'scheduled'
-                                      ? 'bg-blue-100 text-blue-700'
-                                      : 'bg-green-100 text-green-700'
+                                      ? 'bg-primary-100 text-primary-700'
+                                      : 'bg-secondary-100 text-secondary-700'
                                   }`}
                                 >
                                   {post.content.slice(0, 20)}...

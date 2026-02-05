@@ -67,7 +67,7 @@ export default function DashboardPage() {
           value="4.8%"
           change={2.1}
           icon={TrendingUp}
-          iconColor="text-green-600"
+          iconColor="text-secondary-600"
         />
         <StatsCard
           title="Scheduled Posts"
@@ -196,7 +196,7 @@ export default function DashboardPage() {
                 <span
                   className={`text-xs px-2 py-1 rounded-full ${
                     account.is_connected
-                      ? 'bg-green-100 text-green-700'
+                      ? 'bg-secondary-100 text-secondary-700'
                       : 'bg-gray-100 text-gray-600'
                   }`}
                 >
