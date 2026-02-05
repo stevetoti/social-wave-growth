@@ -293,7 +293,7 @@ export default function SignupPage() {
                         <span className="font-medium flex-1">{platform.name}</span>
                         <Checkbox
                           checked={selectedPlatforms.includes(platform.id)}
-                          onCheckedChange={(e) => { /* handled by parent onClick */ }}
+                          onCheckedChange={() => { /* handled by parent onClick */ }}
                           onClick={(e) => e.stopPropagation()}
                         />
                       </div>
