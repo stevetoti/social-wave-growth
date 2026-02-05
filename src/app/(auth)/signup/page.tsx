@@ -293,7 +293,8 @@ export default function SignupPage() {
                         <span className="font-medium flex-1">{platform.name}</span>
                         <Checkbox
                           checked={selectedPlatforms.includes(platform.id)}
-                          onCheckedChange={() => togglePlatform(platform.id)}
+                          onCheckedChange={(e) => { /* handled by parent onClick */ }}
+                          onClick={(e) => e.stopPropagation()}
                         />
                       </div>
                     ))}
@@ -327,8 +328,8 @@ export default function SignupPage() {
 
         <p className="mt-6 text-center text-xs text-gray-500">
           By signing up, you agree to our{' '}
-          <a href="#" className="underline">Terms of Service</a> and{' '}
-          <a href="#" className="underline">Privacy Policy</a>
+          <a href="/terms" className="underline">Terms of Service</a> and{' '}
+          <a href="/privacy" className="underline">Privacy Policy</a>
         </p>
       </div>
     </div>
