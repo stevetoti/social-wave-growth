@@ -12,6 +12,15 @@ export const metadata: Metadata = {
   title: "Social Wave Growth - Ride the Wave to Social Success",
   description: "Schedule posts, analyze performance, and create engaging content across all your social platforms — all from one powerful dashboard.",
   keywords: ["social media management", "scheduling", "analytics", "content creation", "AI"],
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: '/apple-icon.png',
+  },
   openGraph: {
     title: "Social Wave Growth - Ride the Wave to Social Success",
     description: "The all-in-one platform for social media management.",
